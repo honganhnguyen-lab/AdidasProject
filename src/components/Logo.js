@@ -13,14 +13,12 @@ Logo.propTypes = {
 
 export default function Logo({ sx }) {
   const theme = useTheme();
-  const PRIMARY_LIGHT = theme.palette.primary.light;
-  const PRIMARY_MAIN = theme.palette.primary.main;
-  const PRIMARY_DARK = theme.palette.primary.dark;
+ 
 
   return (
     
     <Box sx={{display:'flex',justifyContent:'flex-start', ...sx }}>
-        <img height={80} width={110} justify="flex-end" src={adidas} alt="adidas"/>
+        <img height={80} width={110} src={adidas} alt="adidas"/>
      
     </Box>
   );

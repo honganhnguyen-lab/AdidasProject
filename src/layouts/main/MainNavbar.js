@@ -8,31 +8,61 @@ import PropTypes from 'prop-types';
 // components
 import Logo from '../../components/Logo';
 import SearchBar from 'material-ui-search-bar';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import LoginIcon from '@mui/icons-material/Login';
+import { makeStyles } from '@material-ui/core';
 
 import Link from '@mui/material/Link';
+import { display, flexbox } from '@mui/system';
 
+const useStyles = makeStyles((theme)=>({
+  Toolbar:{
+    justifyContent:"space-between",
+    
+    display:'flex'
+  },
+ container:{ 
+    margin:0,
+    padding:0,
+ },
+ searchBar: {
+   height:30,
+   marginRight: theme.spacing(2),
+ },
+ LoginIcon: {
+  paddingRight: theme.spacing(2),
+ },
+
+
+
+
+}))
 
 function Header(props) {
   const { sections, title } = props;
+  const classes = useStyles();
 
   return (
     <Toolbar>
-    <Button>
+      
         <Logo />
-    </Button>
+    
+    <Container
+    className={classes.container}>
     <Button style={{fontWeight:600}}>MEN</Button>
     <Button style={{fontWeight:600}}>WOMEN</Button>
     <Button style={{fontWeight:600}}>KIDS</Button>
     <Button>SPORTS</Button>
     <Button>BRANDS</Button>
-    <SearchBar
+    </Container>
+    
+    <SearchBar className={classes.searchBar}
     // value={this.state.value}
     // onChange={(newValue) => this.setState({ value: newValue })}
   />
-  <FavoriteIcon/>
+  <LoginIcon className={classes.LoginIcon}/>
   <AddShoppingCartIcon/>
+  
 
     </Toolbar>
 
